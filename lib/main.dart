@@ -6,16 +6,8 @@ main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  State<StatefulWidget> createState() {
-    return _MyAppState();
-  }
-}
-
-class _MyAppState extends State<MyApp> {
-  List<String> _bikes = ["Biker"];
-
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
