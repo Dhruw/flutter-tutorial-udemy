@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hello Divyanshu"),
         ),
-        body: BikesManager()
+        body: BikesManager("Bajaj Dominar")
       ),
     );
   }
