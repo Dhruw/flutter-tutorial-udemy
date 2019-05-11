@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import "./bikes_manger.dart";
+
 main() {
   runApp(MyApp());
 }
@@ -20,33 +22,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text("Hello Divyanshu"),
         ),
-        body: Column(children: <Widget>[
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: RaisedButton(
-                child: Text("Add Bikes"),
-                onPressed: () {
-                  setState(() {
-                    _bikes.add("Hamara Bajaj");
-                    print(_bikes);
-                  });
-                }),
-          ),
-          Column(
-            children: _bikes
-                .map(
-                  (bikeName) => Card(
-                        child: Column(
-                          children: <Widget>[
-                            Text(bikeName),
-                            Image.asset('assets/images/Dominar.jpg')
-                          ],
-                        ),
-                      ),
-                )
-                .toList(),
-          ),
-        ]),
+        body: BikesManager()
       ),
     );
   }
