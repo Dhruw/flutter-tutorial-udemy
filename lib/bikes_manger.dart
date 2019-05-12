@@ -8,7 +8,7 @@ class BikesManager extends StatefulWidget{
   // Because despite the class being StatefulWidget, the state management is not done by this class, it is handled by its supporter class
   // which extends the "State" and associated to the StatefulWidget
 
-  BikesManager(this.bikes);
+  BikesManager({this.bikes});
 
   @override
   State<StatefulWidget> createState() {
