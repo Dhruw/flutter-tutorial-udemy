@@ -1,8 +1,10 @@
+import 'package:first/bike_controller.dart';
 import "package:flutter/material.dart";
 
 import "./bikes.dart";
+import "./bikes_manger.dart";
 
-class BikesManager extends StatefulWidget{
+class BikesManager extends StatefulWidget {
   final String bikes;
   // Why are we using final in StatefulWidget ???
   // Because despite the class being StatefulWidget, the state management is not done by this class, it is handled by its supporter class
@@ -17,6 +19,12 @@ class BikesManager extends StatefulWidget{
 }
 
 class _BikesManagerState extends State<BikesManager> {
+  void _addBike(String bike) {
+    setState(() {
+      _bikes.add(bike);
+      print(_bikes);
+    });
+  }
 
   // The data passed to BikesManager class (above) has to be stored in this class VIA A METHOD ONLY. We cannot directly assign the data
   List<String> _bikes = [];
@@ -32,18 +40,11 @@ class _BikesManagerState extends State<BikesManager> {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: RaisedButton(
-                child: Text("Add Bikes"),
-                onPressed: () {
-                  setState(() {
-                    _bikes.add("Hamara Bajaj");
-                    print(_bikes);
-                  });
-                }),
-          ),
-          Bikes(_bikes)
-        ]);
+      Container(
+        margin: EdgeInsets.all(10.0),
+        child: BikeController(_addBike),
+      ),
+      Bikes(_bikes)
+    ]);
   }
 }

@@ -6,8 +6,7 @@ class Bikes extends StatelessWidget {
   // "final" keyword is used because in stateless widget the values should not change. final is similar to const in JS.
   // If the value of bikes is changed from parent then the value of bikes will be replaced instead of updating it
 
-  Bikes(
-      this.bikes); // This is a constructor and this.bikes is a special "magic" of dart to assign values
+  Bikes(this.bikes); // This is a constructor and this.bikes is a special "magic" of dart to assign values
 
   @override
   Widget build(BuildContext context) {
