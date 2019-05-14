@@ -2,7 +2,7 @@ import 'package:first/bike_controller.dart';
 import "package:flutter/material.dart";
 
 import "./bikes.dart";
-import "./bikes_manger.dart";
+import "./bike_controller.dart";
 
 class BikesManager extends StatefulWidget {
   final String bikes;
@@ -44,7 +44,7 @@ class _BikesManagerState extends State<BikesManager> {
         margin: EdgeInsets.all(10.0),
         child: BikeController(_addBike),
       ),
-      Bikes(_bikes)
+    Expanded( child: Bikes(_bikes))
     ]);
   }
 }

@@ -11,7 +11,7 @@ class Bikes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(
+    return ListView(
       children: bikes
           .map(
             (bikeName) => Card(
