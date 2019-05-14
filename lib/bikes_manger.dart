@@ -5,12 +5,13 @@ import "./bikes.dart";
 import "./bike_controller.dart";
 
 class BikesManager extends StatefulWidget {
-  final String bikes;
+  // final String bikes;
   // Why are we using final in StatefulWidget ???
   // Because despite the class being StatefulWidget, the state management is not done by this class, it is handled by its supporter class
   // which extends the "State" and associated to the StatefulWidget
 
-  BikesManager({this.bikes});
+  // BikesManager({this.bikes});
+  BikesManager();
 
   @override
   State<StatefulWidget> createState() {
@@ -28,14 +29,14 @@ class _BikesManagerState extends State<BikesManager> {
 
   // The data passed to BikesManager class (above) has to be stored in this class VIA A METHOD ONLY. We cannot directly assign the data
   List<String> _bikes = [];
-
-  @override
-  void initState() {
-    // The method to initialize data is initState. setState is not required here because initState is executed first
-    // add is another dart magic and widget is used to access the vaiables passed
-    _bikes.add(widget.bikes);
-    super.initState();
-  }
+//   @override
+//   void initState() {
+//     // The method to initialize data is initState. setState is not required here because initState is executed first
+//     // add is another dart magic and widget is used to access the vaiables passed
+//     // _bikes.add(widget.bikes);
+//      print(_bikes.length);
+//     super.initState();
+//   }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,11 @@ class _BikesManagerState extends State<BikesManager> {
         margin: EdgeInsets.all(10.0),
         child: BikeController(_addBike),
       ),
-    Expanded( child: Bikes(_bikes))
+      _bikes.length > 0
+          ? Expanded(child: Bikes(_bikes))
+          : Container(
+              child: Text("Ride on . . .   Add a few bikes."),
+            )
     ]);
   }
 }

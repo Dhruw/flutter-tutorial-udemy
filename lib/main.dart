@@ -15,9 +15,10 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text("Hello Divyanshu"),
+            title: Text("Hello Bikers"),
           ),
-          body: BikesManager(bikes: "Bajaj Dominar")),
+          // body: BikesManager(bikes: "Bajaj Dominar")),
+          body: BikesManager()),
     );
   }
 }
